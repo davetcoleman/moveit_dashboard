@@ -1,0 +1,9 @@
+<library path="lib/libmoveit_dashboard">
+  <class name="moveit_dashboard/MoveItDashboard"
+         type="moveit_dashboard::MoveItPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A panel widget allowing control of the MoveIt pipeline
+    </description>
+  </class>
+</library>

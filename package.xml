@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <name>moveit_dashboard</name>
+  <version>0.0.1</version>
+  <description>Rviz display panel for controlling and debugging MoveIt! applications</description>
+
+  <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">https://github.com/davetcoleman/moveit_dashboard</url>
+  <url type="butracker">https://github.com/davetcoleman/moveit_dashboard/issues</url>
+  <url type="repository">https://github.com/davetcoleman/moveit_dashboard/</url>
+
+  <author email="davetcoleman@gmail.com">Dave Coleman</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rviz</build_depend>
+  <build_depend>dashboard_msgs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rviz</run_depend>
+
+  <export>
+      <rosdoc config="${prefix}/rosdoc.yaml"/>
+      <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
+</package>
