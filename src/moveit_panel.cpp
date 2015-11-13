@@ -78,12 +78,12 @@ MoveItPanel::MoveItPanel(QWidget* parent)
 
   // Create a push button
   btn_reset_ = new QPushButton(this);
-  btn_reset_->setText("Reset");
+  btn_reset_->setText("Zero");
   connect(btn_reset_, SIGNAL(clicked()), this, SLOT(resetRobot()));
 
   // Create a push button
   btn_bringup_ = new QPushButton(this);
-  btn_bringup_->setText("Bringup");
+  btn_bringup_->setText("Play");
   connect(btn_bringup_, SIGNAL(clicked()), this, SLOT(bringupRobot()));
 
   // Create a push button
@@ -93,7 +93,7 @@ MoveItPanel::MoveItPanel(QWidget* parent)
 
   // Create a push button
   btn_grip_ = new QPushButton(this);
-  btn_grip_->setText("Grip");
+  btn_grip_->setText("Stop");
   connect(btn_grip_, SIGNAL(clicked()), this, SLOT(toggleGripper()));
 
   // Drop down box
@@ -124,9 +124,9 @@ MoveItPanel::MoveItPanel(QWidget* parent)
   // Horizontal Layout
   QHBoxLayout* hlayout2 = new QHBoxLayout;
   //hlayout2->addWidget(new QLabel(QString("Robot:")));
-  hlayout2->addWidget(btn_bringup_);
   hlayout2->addWidget(btn_home_);
   hlayout2->addWidget(btn_reset_);
+  hlayout2->addWidget(btn_bringup_);
   hlayout2->addWidget(btn_grip_);
   //hlayout2->addWidget(spin_box_);
   //hlayout2->addWidget(combo_mode_);
@@ -149,7 +149,7 @@ MoveItPanel::MoveItPanel(QWidget* parent)
   setLayout(layout);
 
   remote_publisher_ =
-    nh_.advertise<dashboard_msgs::DashboardControl>("/moveit_main/remote_control", 1);
+    nh_.advertise<dashboard_msgs::DashboardControl>("/moveit_rviz_dashboard", 1);
 
   // Make the control widget start disabled, since we don't start with an output topic.
   btn_next_->setEnabled(true);
