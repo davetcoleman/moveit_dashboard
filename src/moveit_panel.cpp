@@ -205,7 +205,7 @@ void MoveItPanel::changeJointMode(int mode)
 
 void MoveItPanel::resetRobot()
 {
-  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Resetting robot");
+  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Zero Pose");
 
   dashboard_msgs::DashboardControl msg;
   msg.robot_reset = true;
@@ -214,7 +214,7 @@ void MoveItPanel::resetRobot()
 
 void MoveItPanel::bringupRobot()
 {
-  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Bringing up robot");
+  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Play trajectory");
 
   dashboard_msgs::DashboardControl msg;
   msg.robot_bringup = true;
@@ -223,7 +223,7 @@ void MoveItPanel::bringupRobot()
 
 void MoveItPanel::homeRobot()
 {
-  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Sending robot home");
+  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Home Pose");
 
   // Ensure robot is in joint position or impedance mode
   //combo_mode_->setCurrentIndex(4);  // Low impedance
@@ -235,7 +235,7 @@ void MoveItPanel::homeRobot()
 
 void MoveItPanel::toggleGripper()
 {
-  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Toggling gripping");
+  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Stopping trajectory");
 
   dashboard_msgs::DashboardControl msg;
   msg.toggle_gripper = true;
