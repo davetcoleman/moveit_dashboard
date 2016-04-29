@@ -1,10 +1,11 @@
 # MoveIt! Dashboard
 
-Description: Very simply Rviz interface for interacting with custom MoveIt! applications via ROS topics
+Description: Very simple Rviz interface for interacting with custom MoveIt! applications (or any ROS application really) via ROS topics
 
 Features:
 
- - Buttons
+ - Custom Rviz panel
+ - Buttons that trigger ROS messages
 
 Developed by [Dave Coleman](http://dav.ee/) at the University of Colorado Boulder
 
@@ -42,6 +43,7 @@ Publishes on the topic of ``/moveit_rviz_dashboard``
 
 The buttons in the [Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html) message correspond to the following:
 
+```
 1 - Move next
 2 - Auto step
 3 - Full auto
@@ -50,8 +52,11 @@ The buttons in the [Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html) 
 6 - Play trajectory
 7 - Stop trajectory
 8 - Home
+```
 
 ## Testing and Linting
+
+> Note: this package has not been released yet
 
 To run [roslint](http://wiki.ros.org/roslint), use the following command with [catkin-tools](https://catkin-tools.readthedocs.org/):
 
