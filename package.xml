@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>moveit_dashboard</name>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <description>Rviz display panel for controlling and debugging MoveIt! applications</description>
 
   <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
@@ -16,12 +16,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roscpp</build_depend>
-  <build_depend>rviz</build_depend>
-  <build_depend>dashboard_msgs</build_depend>
-
-  <run_depend>roscpp</run_depend>
-  <run_depend>rviz</run_depend>
+  <depend>roscpp</depend>
+  <depend>rviz</depend>
+  <depend>sensor_msgs</depend>
 
   <export>
       <rosdoc config="${prefix}/rosdoc.yaml"/>

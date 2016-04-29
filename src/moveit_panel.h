@@ -57,7 +57,6 @@ class QSpinBox;
 
 namespace moveit_dashboard
 {
-// BEGIN_TUTORIAL
 // Here we declare our new subclass of rviz::Panel.  Every panel which
 // can be added via the Panels/Add_New_Panel menu is a subclass of
 // rviz::Panel.
@@ -92,32 +91,21 @@ public Q_SLOTS:
   // Here we declare some internal slots.
 protected Q_SLOTS:
 
-  /// User has chosen to go to next step
   void moveNext();
 
-  /// User has chosen to run demo
   void moveAuto();
 
-  /// User has chosen to run demo
   void moveFullAuto();
 
-  /// User has chosen to stop
   void moveStop();
 
-  /// User wants to change joint mode (velocity/gravity compensation)
-  void changeJointMode(int mode);
+  void zeroRobot();
 
-  /// User wants to reset robot
-  void resetRobot();
+  void playTrajectory();
 
-  /// User wants to bringup robot
-  void bringupRobot();
+  void stopTrajectory();
 
-  /// User wants to send robot home
   void homeRobot();
-
-  /// User wants to bringup robot
-  void toggleGripper();
 
   // Then we finish up with protected member variables.
 protected:
@@ -133,12 +121,10 @@ protected:
   QComboBox *combo_mode_;
 
   // The ROS publishers
-  ros::Publisher remote_publisher_;
+  ros::Publisher joy_publisher_;
 
   // The ROS node handle.
   ros::NodeHandle nh_;
-
-  // END_TUTORIAL
 };
 
 }  // end namespace moveit_dashboard

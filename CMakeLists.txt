@@ -1,10 +1,8 @@
-## BEGIN_TUTORIAL
-##
-## First start with some standard catkin stuff.
 cmake_minimum_required(VERSION 2.8.3)
 project(moveit_dashboard)
 find_package(catkin REQUIRED COMPONENTS
   rviz
+  sensor_msgs
 )
 catkin_package(
   CATKIN_DEPENDS
