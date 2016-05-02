@@ -50,7 +50,6 @@
 
 #include <QPushButton>
 #include <QComboBox>
-#include <dashboard_msgs/DashboardControl.h>
 
 class QLineEdit;
 class QSpinBox;
