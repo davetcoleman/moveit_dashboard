@@ -22,12 +22,14 @@ add_definitions(-DQT_NO_KEYWORDS)
 ## Qt's meta-object compiler.
 qt4_wrap_cpp(MOC_FILES
   src/moveit_panel.h
+  src/key_tool.h
 )
 
 ## Here we specify the list of source files, including the output of
 ## the previous command which is stored in ``${MOC_FILES}``.
 set(SOURCE_FILES
   src/moveit_panel.cpp
+  src/key_tool.cpp
   ${MOC_FILES}
 )
 

@@ -131,7 +131,6 @@ MoveItPanel::MoveItPanel(QWidget* parent) : rviz::Panel(parent)
 
   joy_publisher_ = nh_.advertise<sensor_msgs::Joy>("/moveit_rviz_dashboard", 1);
 
-  // Make the control widget start disabled, since we don't start with an output topic.
   btn_next_->setEnabled(true);
   btn_auto_->setEnabled(true);
   btn_full_auto_->setEnabled(true);

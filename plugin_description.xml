@@ -6,4 +6,11 @@
       A panel widget allowing control of the MoveIt pipeline
     </description>
   </class>
+
+  <class name="moveit_dashboard/KeyTool" type="moveit_dashboard::KeyTool" base_class_type="rviz::Tool">
+    <description>
+      Tool to capture keyboard input
+    </description>
+  </class>
+
 </library>

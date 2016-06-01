@@ -9,6 +9,8 @@ Features:
 
 Developed by [Dave Coleman](http://dav.ee/) at the University of Colorado Boulder
 
+<div>Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
 Status:
 
  * [![Build Status](https://travis-ci.org/davetcoleman/moveit_dashboard.svg)](https://travis-ci.org/davetcoleman/moveit_dashboard) Travis - Continuous Integration
