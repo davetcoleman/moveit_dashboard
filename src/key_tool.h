@@ -34,7 +34,8 @@
 #include <ros/node_handle.h>
 #include <ros/publisher.h>
 
-#include "rviz/tool.h"
+#include <rviz/tool.h>
+#include <rviz/default_plugin/tools/move_tool.h>
 
 #include <QCursor>
 #include <QObject>
@@ -42,7 +43,6 @@
 
 namespace moveit_dashboard
 {
-
 //! The Point Tool allows the user to click on a point which
 //! gets published as a Joy message.
 class KeyTool : public rviz::Tool
@@ -64,12 +64,9 @@ public:
 public Q_SLOTS:
 
 protected:
-  QCursor std_cursor_;
-  QCursor hit_cursor_;
-
   ros::NodeHandle nh_;
   ros::Publisher joy_publisher_;
-
+  rviz::MoveTool move_tool_;
 };
 }
 

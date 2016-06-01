@@ -62,8 +62,7 @@ KeyTool::~KeyTool()
 
 void KeyTool::onInitialize()
 {
-  hit_cursor_ = cursor_;
-  std_cursor_ = rviz::getDefaultCursor();
+  move_tool_.initialize( context_ );
 }
 
 void KeyTool::activate()
@@ -92,34 +91,23 @@ int KeyTool::processKeyEvent(QKeyEvent* event, rviz::RenderPanel* panel)
   if (event->key() == Qt::Key_N)
   {
     moveNext();
+    return 1;
   }
+
+  return move_tool_.processKeyEvent( event, panel );
 }
 
 int KeyTool::processMouseEvent(rviz::ViewportMouseEvent& event)
 {
   int flags = 0;
 
-  Ogre::Vector3 pos;
-  bool success = context_->getSelectionManager()->get3DPoint(event.viewport, event.x, event.y, pos);
-  setCursor(success ? hit_cursor_ : std_cursor_);
-
-  if (success)
-  {
-    setStatus("Use keyboard to progress through events");
-
-    if (event.leftUp())
-    {
-      moveNext();
-    }
-  }
-  else
-  {
-    setStatus("Use keyboard to progress through events.");
-  }
+  move_tool_.processMouseEvent( event );
+  setCursor( move_tool_.getCursor() );
 
   return flags;
 }
-}
+
+} // end class
 
 #include <pluginlib/class_list_macros.h>
 PLUGINLIB_EXPORT_CLASS(moveit_dashboard::KeyTool, rviz::Tool)
