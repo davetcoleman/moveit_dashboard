@@ -57,6 +57,7 @@ public:
   virtual void activate();
   virtual void deactivate();
   void moveNext();
+  void moveAuto();
 
   virtual int processKeyEvent(QKeyEvent* event, rviz::RenderPanel* panel);
   virtual int processMouseEvent(rviz::ViewportMouseEvent& event);

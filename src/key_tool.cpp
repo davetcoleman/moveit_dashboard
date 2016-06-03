@@ -83,15 +83,29 @@ void KeyTool::moveNext()
   joy_publisher_.publish(msg);
 }
 
+void KeyTool::moveAuto()
+{
+  ROS_INFO_STREAM_NAMED("moveit_dashboard", "Running auto step");
+
+  sensor_msgs::Joy msg;
+  msg.buttons.resize(9);
+  msg.buttons[2] = 1;
+  joy_publisher_.publish(msg);
+}
+
 int KeyTool::processKeyEvent(QKeyEvent* event, rviz::RenderPanel* panel)
 {
   //std::cout << "event->key(): " << event->key() << std::endl;
 
   // move forward / backward
-  if (event->key() == Qt::Key_N)
+  switch (event->key())
   {
-    moveNext();
-    return 1;
+    case Qt::Key_N:
+      moveNext();
+      return 1;
+    case Qt::Key_A:
+      moveAuto();
+      return 1;
   }
 
   return move_tool_.processKeyEvent( event, panel );
