@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(moveit_dashboard)
+
+# C++ 11
+set(CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
+
 find_package(catkin REQUIRED COMPONENTS
   rviz
   sensor_msgs
