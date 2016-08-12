@@ -21,7 +21,6 @@
   <depend>sensor_msgs</depend>
 
   <export>
-      <rosdoc config="${prefix}/rosdoc.yaml"/>
       <rviz plugin="${prefix}/plugin_description.xml"/>
   </export>
 </package>
