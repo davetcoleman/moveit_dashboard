@@ -1,15 +1,15 @@
 # MoveIt! Dashboard
 
-Description: Very simple Rviz interface for interacting with custom MoveIt! applications (or any ROS application really) via ROS topics
+Description: Very simple Rviz interface for interacting with custom MoveIt! applications (or any ROS application really) via ROS topics. Does not actually depend on MoveIt!
 
 Features:
 
  - Custom Rviz panel
  - Buttons that trigger ROS messages
+ - Rviz-based keyboard control for stepping through application
+ - Interface for integrating interaction with other cpp nodes
 
 Developed by [Dave Coleman](http://dav.ee/) at the University of Colorado Boulder
-
-<div>Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 Status:
 
@@ -25,19 +25,19 @@ Status:
 
 > Note: this package has not been released yet
 
-    sudo apt-get install ros-indigo-moveit-dashboard
+    sudo apt-get install ros-kinetic-moveit-dashboard
 
 ### Build from Source
 
 To build this package, ``git clone`` this repo into a [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) and be sure to install necessary dependencies by running the following command in the root of your catkin workspace:
 
-    rosdep install -y --from-paths src --ignore-src --rosdistro indigo
+    rosdep install -y --from-paths src --ignore-src --rosdistro kinetic
 
 ## Code API
 
 > Note: this package has not been released yet
 
-See [Class Reference](http://docs.ros.org/indigo/api/moveit_dashboard/html/)
+See [Class Reference](http://docs.ros.org/kinetic/api/moveit_dashboard/html/)
 
 ## Usage
 
@@ -50,15 +50,22 @@ The buttons in the [Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html) 
 2 - Auto step
 3 - Full auto
 4 - Stop
+Robot:
+8 - Home
 5 - Zero
 6 - Play trajectory
 7 - Stop trajectory
-8 - Home
 ```
 
-## Testing and Linting
+### Mouse-Based Control
 
-> Note: this package has not been released yet
+Use the Rviz panel called "MoveItDashboard" to step through your program.
+
+### Keyboard-Based Control
+
+Switch to the "KeyTool" in the top of the Rviz window and used keyboard commands "n" and "a" for next and auto, respectively.
+
+## Testing and Linting
 
 To run [roslint](http://wiki.ros.org/roslint), use the following command with [catkin-tools](https://catkin-tools.readthedocs.org/):
 
@@ -75,3 +82,5 @@ There are currently no unit or integration tests for this package. If there were
 ## Contribute
 
 Please send PRs for new helper functions, fixes, etc!
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>

@@ -19,6 +19,7 @@
   <depend>roscpp</depend>
   <depend>rviz</depend>
   <depend>sensor_msgs</depend>
+  <depend>rosparam_shortcuts</depend>
 
   <export>
       <rviz plugin="${prefix}/plugin_description.xml"/>
