@@ -138,6 +138,7 @@ bool RemoteControl::getFullAutonomous()
 {
   return full_autonomous_;
 }
+
 bool RemoteControl::waitForNextStep(const std::string& caption)
 {
   // Check if we really need to wait
@@ -157,12 +158,10 @@ bool RemoteControl::waitForNextStep(const std::string& caption)
   {
     ros::Duration(0.25).sleep();
     ros::spinOnce();
-
-    if (!ros::ok())
-      exit(0);
   }
   if (!ros::ok())
     exit(0);
+
   next_step_ready_ = false;
   is_waiting_ = false;
   std::cout << CONSOLE_COLOR_CYAN << "... Continuing" << CONSOLE_COLOR_RESET << std::endl;
@@ -179,7 +178,9 @@ bool RemoteControl::waitForNextFullStep(const std::string& caption)
     return true;
 
   // Show message
-  std::cout << "Waiting to " << caption << std::endl;
+  std::cout << std::endl;
+  std::cout << CONSOLE_COLOR_CYAN << "Waiting to continue: " << caption << CONSOLE_COLOR_RESET << std::endl;
+
   if (displayWaitingState_)
     displayWaitingState_(true);
 
@@ -192,9 +193,11 @@ bool RemoteControl::waitForNextFullStep(const std::string& caption)
   }
   if (!ros::ok())
     exit(0);
+
   next_step_ready_ = false;
   is_waiting_ = false;
-  std::cout << "Continuing " << std::endl;
+  std::cout << CONSOLE_COLOR_CYAN << "... Continuing" << CONSOLE_COLOR_RESET << std::endl;
+
   if (displayWaitingState_)
     displayWaitingState_(false);
   return true;

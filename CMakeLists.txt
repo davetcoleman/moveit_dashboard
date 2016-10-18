@@ -75,14 +75,23 @@ target_link_libraries(${PROJECT_NAME} ${rviz_DEFAULT_PLUGIN_LIBRARIES} ${QT_LIBR
 add_library(${PROJECT_NAME}_remote_control src/remote_control.cpp)
 target_link_libraries(${PROJECT_NAME}_remote_control ${catkin_LIBRARIES})
 
-## Install rules
-install(TARGETS
-  ${PROJECT_NAME} ${PROJECT_NAME}_remote_control
+#############
+## Install ##
+#############
+
+## Mark executables and/or libraries for installation
+install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_remote_control
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+# Mark cpp header files for installation
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  )
+
+# Mark config files for installation
 install(FILES
   plugin_description.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
